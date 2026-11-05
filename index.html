@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mohammad Osama Ibrahim, junior full stack developer in Amman, Jordan. Explore his web development work and selected university projects.">
+  <meta name="theme-color" content="#f6f5ef">
+  <script>
+    const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+    let savedTheme;
+    try { savedTheme = localStorage.getItem('portfolio-theme'); } catch {}
+
+    function setTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#141b17' : '#f6f5ef';
+    }
+
+    setTheme(savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : systemTheme.matches ? 'dark' : 'light');
+  </script>
+  <title>Mohammad Osama Ibrahim — Full Stack Developer</title>
+  <link rel="icon" href="./mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body id="top">
+  <svg class="tech-symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="tech-html" viewBox="0 0 24 24"><path d="M4 3h16l-1.5 16L12 22l-6.5-3zM8 8h8M8.5 12h7l-.5 4-3 1-3-1"/></symbol>
+    <symbol id="tech-css" viewBox="0 0 24 24"><path d="M4 3h16l-1.5 16L12 22l-6.5-3zM8 8h8l-6 4h5.5l-.5 4-3 1-3-1"/></symbol>
+    <symbol id="tech-js" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3" fill="currentColor" stroke="none"/><text x="12" y="12.5" fill="#fff" stroke="none" text-anchor="middle" dominant-baseline="central" font-family="system-ui, sans-serif" font-size="10" font-weight="800">JS</text></symbol>
+    <symbol id="tech-ts" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3" fill="currentColor" stroke="none"/><text x="12" y="12.5" fill="#fff" stroke="none" text-anchor="middle" dominant-baseline="central" font-family="system-ui, sans-serif" font-size="10" font-weight="800">TS</text></symbol>
+    <symbol id="tech-php" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3" fill="currentColor" stroke="none"/><text x="12" y="12.5" fill="#fff" stroke="none" text-anchor="middle" dominant-baseline="central" font-family="system-ui, sans-serif" font-size="8" font-weight="800">PHP</text></symbol>
+    <symbol id="tech-cpp" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3" fill="currentColor" stroke="none"/><text x="12" y="12.5" fill="#fff" stroke="none" text-anchor="middle" dominant-baseline="central" font-family="system-ui, sans-serif" font-size="8" font-weight="800">C++</text></symbol>
+    <symbol id="tech-csharp" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="18" rx="3" fill="currentColor" stroke="none"/><text x="12" y="12.5" fill="#fff" stroke="none" text-anchor="middle" dominant-baseline="central" font-family="system-ui, sans-serif" font-size="10" font-weight="800">C#</text></symbol>
+    <symbol id="tech-react" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1" fill="currentColor"/></symbol>
+    <symbol id="tech-next" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16V8l10 10M15 8v5"/></symbol>
+    <symbol id="tech-node" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7zM9 15V9l6 6V9"/></symbol>
+    <symbol id="tech-mysql" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v13c0 4 16 4 16 0V5M4 11c0 4 16 4 16 0"/></symbol>
+    <symbol id="tech-postgres" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v13c0 4 16 4 16 0V5M4 11c0 4 16 4 16 0m-8 2v6"/></symbol>
+    <symbol id="tech-supabase" viewBox="0 0 24 24"><path d="m13 2-9 11h7v9l9-11h-7z"/></symbol>
+    <symbol id="tech-firebase" viewBox="0 0 24 24"><path d="M5 17 7 3l4 7 3-5 5 12-7 4zM5 17 14 5m-3 5 2 4"/></symbol>
+    <symbol id="tech-python" viewBox="0 0 24 24"><path d="M12 3H8a3 3 0 0 0-3 3v3h7m0-6h3a3 3 0 0 1 3 3v4a2 2 0 0 1-2 2H8a2 2 0 0 0-2 2v4a3 3 0 0 0 3 3h7a3 3 0 0 0 3-3v-3h-7"/><path d="M9 6h.1M15 18h.1"/></symbol>
+    <symbol id="tech-java" viewBox="0 0 24 24"><path d="M5 11h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4zm11 1h2a2 2 0 0 1 0 4h-2M3 21h16M9 8c-3-3 4-3 2-6m2 6c-1-1 0-2 2-3"/></symbol>
+    <symbol id="tech-esp" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 3v3m6-3v3m-6 12v3m6-3v3M3 9h3m-3 6h3m12-6h3m-3 6h3"/><rect x="10" y="10" width="4" height="4"/></symbol>
+    <symbol id="tech-arduino" viewBox="0 0 24 24"><path d="M12 12c-3-4-4-5-6-5a5 5 0 0 0 0 10c2 0 3-1 6-5s4-5 6-5a5 5 0 0 1 0 10c-2 0-3-1-6-5zM4 12h4m8 0h4m-2-2v4"/></symbol>
+    <symbol id="tech-things" viewBox="0 0 24 24"><path d="M3 4h8v7H3zm11 0h7v7h-7zM3 14h8v6H3zm11 0h7v6h-7z"/></symbol>
+    <symbol id="tech-git" viewBox="0 0 24 24"><path d="m12 2 10 10-10 10L2 12zM9 6l7 7m-5-5v8"/><circle cx="11" cy="16" r="1.4" fill="currentColor"/><circle cx="16" cy="13" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="tech-github" viewBox="0 0 24 24"><path d="M8 19c-2 1-3 0-4-2m4 4v-3c0-1 .3-1.5 1-2-4-.5-5-2-5-5 0-1 .4-2 1-3-.4-1-.4-2 0-3 1 0 2 .3 3 1a13 13 0 0 1 8 0c1-.7 2-1 3-1 .4 1 .4 2 0 3 .6 1 1 2 1 3 0 3-1 4.5-5 5 .7.5 1 1 1 2v3"/></symbol>
+    <symbol id="tech-linux" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
+    <symbol id="tech-docker" viewBox="0 0 24 24"><path d="M3 13h15l2-2 2 1-2 3c-2 4-5 5-9 5-5 0-7-2-8-7Zm3 0V9h10v4m-7-4V5h4v4"/></symbol>
+    <symbol id="tech-cloud" viewBox="0 0 24 24"><path d="M5 17a4 4 0 0 1 0-8 6 6 0 0 1 11-2 5 5 0 0 1 4 8m-8-4-3 5h4l-2 5"/></symbol>
+    <symbol id="tech-chart" viewBox="0 0 24 24"><path d="M4 4v16h16M8 15l4-5 4 2 4-6"/></symbol>
+    <symbol id="tech-vite" viewBox="0 0 24 24"><path d="m3 5 9 16 9-16-9 3zM14 3l-4 9h5l-3 6"/></symbol>
+    <symbol id="tech-canvas" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="1.5"/><path d="m4 18 6-5 3 2 4-5 4 4"/></symbol>
+    <symbol id="tech-xgb" viewBox="0 0 24 24"><path d="M12 4v5m0 0-6 4m6-4 6 4M6 13v6m12-6v6"/><circle cx="12" cy="4" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></symbol>
+  </svg>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="shell header">
+    <a class="brand" href="#top" aria-label="Mohammad Osama Ibrahim, home"><span>m<span>.</span></span> MOHAMMAD<br>OSAMA IBRAHIM</a>
+    <nav aria-label="Main navigation">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" hidden>
+      <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 14a9 9 0 0 1-10.9-10.8A9 9 0 1 0 20.8 14Z"/></svg>
+      <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+    </button>
+  </header>
+  <main id="main">
+    <section class="shell hero" aria-labelledby="name">
+      <div class="hero-copy">
+        <p class="eyebrow availability">OPEN TO OPPORTUNITIES</p>
+        <h1 id="name">Mohammad<br>Osama Ibrahim<span>.</span></h1>
+        <p class="role"><span class="role-arrow" aria-hidden="true">→</span><span class="role-title">Junior Full Stack Developer</span></p>
+        <p class="intro">I build full-stack web applications with clean interfaces and reliable backend logic.</p>
+        <div class="actions"><a class="button primary" href="#projects">Explore projects <span aria-hidden="true">↓</span></a><a class="text-link" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <figure class="hero-art">
+        <div class="portrait-terminal-bar" aria-hidden="true">
+          <span class="terminal-lights"><i></i><i></i><i></i></span>
+          <span>~/portfolio</span>
+        </div>
+        <div class="portrait-terminal-screen">
+          <span class="portrait-prompt" aria-hidden="true">&gt;_</span>
+          <img src="./portrait.webp" width="800" height="800" alt="Mohammad Osama Ibrahim">
+        </div>
+      </figure>
+      <dl class="profile-strip">
+        <div class="profile-location">
+          <dt>BASED IN</dt>
+          <dd>
+            <span class="location-badge"><img src="./assets/jordan-flag.webp" width="192" height="128" alt="" decoding="async"></span>
+            <span>Amman, Jordan</span>
+          </dd>
+        </div>
+        <div class="education">
+          <dt>EDUCATION</dt>
+          <dd>
+            <img class="university-mark" src="./assets/mutah-university.webp" width="223" height="256" alt="" decoding="async">
+            <span>B.Sc. Computer Science</span>
+            <span class="university-name">Mu’tah University</span>
+          </dd>
+        </div>
+        <div class="graduation"><dt>GRADUATED</dt><dd><img class="graduation-mark" src="./assets/graduation.webp" width="256" height="256" alt="" decoding="async"><time datetime="2026-06">June 2026</time></dd></div>
+      </dl>
+    </section>
+    <section class="shell section" id="projects" aria-labelledby="projects-title">
+      <p class="eyebrow index">01 / PORTFOLIO</p>
+      <div class="section-head">
+        <div>
+          <h2 id="projects-title">Selected work<span>.</span></h2>
+          <p>Four projects across the web, IoT, simulation, and machine learning.</p>
+        </div>
+        <img class="projects-art" src="./assets/projects-art.webp" width="900" height="643" alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="project-list">
+      <article class="project-row">
+        <div class="project-icon" aria-hidden="true">
+          <img src="./khayrat-logo.png" width="512" height="512" alt="">
+        </div>
+        <div>
+          <p class="eyebrow project-status"><span>01 / COMMERCE</span><span class="live">LIVE WEBSITE</span><span>NOV 2026 – PRESENT</span></p>
+          <h3>Khairat Jibal Ajloun &amp; Jerash</h3>
+          <p>An Arabic right-to-left e-commerce storefront for a Jordanian olive-oil business.</p>
+          <ul class="details"><li>Server-side price validation from trusted catalog data</li><li>Multi-step checkout with receipt-based transfer payments</li><li>Authenticated owner dashboard for orders and catalog</li><li>Turnstile protection, rate limiting, and automated tests</li></ul>
+          <ul class="technologies stack" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-next"/></svg><span>Next.js</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-react"/></svg><span>React</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-ts"/></svg><span>TypeScript</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-supabase"/></svg><span>Supabase</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-cloud"/></svg><span>Cloudflare Workers</span></li>
+          </ul>
+        </div>
+        <a class="text-link" href="https://khairatjibalaj.com">Visit the site <span aria-hidden="true">↗</span></a>
+      </article>
+        <article class="project-row">
+          <div class="project-icon sensor" aria-hidden="true"><img src="./assets/breathsafe.webp" width="256" height="256" alt="" loading="lazy" decoding="async"></div>
+          <div><p class="eyebrow">02 / CAPSTONE PROTOTYPE</p><h3>BreathSafe</h3><p>A browser dashboard for gas and environmental sensor readings.</p><ul class="details"><li>Live updates through Firebase Realtime Database</li><li>Trend charts and threshold-based warnings</li><li>Onboarding with administrator approval</li></ul><ul class="technologies stack" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-js"/></svg><span>JavaScript</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-firebase"/></svg><span>Firebase</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-chart"/></svg><span>Chart.js</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-vite"/></svg><span>Vite</span></li>
+          </ul></div>
+          <a class="text-link" href="https://github.com/mahmadOsama/Breath-Safe" aria-label="View code for BreathSafe">View code <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project-row">
+          <div class="project-icon photon" aria-hidden="true"><img src="./assets/lifi.webp" width="256" height="256" alt="" loading="lazy" decoding="async"></div>
+          <div><p class="eyebrow">03 / UNIVERSITY PROJECT</p><h3>Li-Fi Photon Lab</h3><p>An interactive simulator of visible light communication.</p><ul class="details"><li>Coverage, wall blocking, and Li-Fi vs. Wi-Fi security</li><li>Lambertian channel model with SNR, BER, and Shannon capacity</li><li>Live eye diagram and impulse response views</li></ul><ul class="technologies stack" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-js"/></svg><span>JavaScript</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-canvas"/></svg><span>HTML5 Canvas</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-css"/></svg><span>CSS</span></li>
+          </ul></div>
+          <a class="text-link" href="https://github.com/mahmadOsama/lifi" aria-label="View code for Li-Fi Photon Lab">View code <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project-row">
+          <div class="project-icon data" aria-hidden="true"><img src="./assets/wids.webp" width="256" height="256" alt="" loading="lazy" decoding="async"></div>
+          <div><p class="eyebrow">04 / MACHINE LEARNING</p><h3>WiDS 2023 Datathon, Part 2</h3><p>An XGBoost regression model for temperature prediction, evaluated on a held-out test set.</p><ul class="details"><li>Predictions generated in the required submission format</li><li>Held-out test set RMSE of 0.1951</li></ul><ul class="technologies stack" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-python"/></svg><span>Python</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-xgb"/></svg><span>XGBoost</span></li>
+          </ul></div>
+          <a class="text-link" href="https://github.com/mahmadOsama/python-assignments/tree/main/WiDS_2023_Datathon%20part2" aria-label="View code for WiDS 2023 Datathon, Part 2">View code <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+    <section class="skills-band" id="skills" aria-labelledby="skills-title">
+      <div class="shell section split">
+        <div>
+          <p class="eyebrow index">02 / SKILLS</p>
+          <h2 id="skills-title">My toolkit<span>.</span></h2>
+          <img class="toolbox-art" src="./assets/toolbox.webp" width="1000" height="785" alt="" loading="lazy" decoding="async">
+        </div>
+        <dl class="skills-list">
+          <div><dt>Frontend</dt><dd><ul class="technologies" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-html"/></svg><span>HTML5</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-css"/></svg><span>CSS3</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-js"/></svg><span>JavaScript</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-react"/></svg><span>React</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-next"/></svg><span>Next.js</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-ts"/></svg><span>TypeScript</span></li>
+          </ul></dd></div>
+          <div><dt>Backend &amp; Data</dt><dd><ul class="technologies" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-node"/></svg><span>Node.js</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-php"/></svg><span>PHP</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-mysql"/></svg><span>MySQL</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-postgres"/></svg><span>PostgreSQL</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-supabase"/></svg><span>Supabase</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-firebase"/></svg><span>Firebase</span></li>
+          </ul></dd></div>
+          <div><dt>Languages</dt><dd><ul class="technologies" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-cpp"/></svg><span>C++</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-python"/></svg><span>Python</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-java"/></svg><span>Java</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-csharp"/></svg><span>C# (learning .NET)</span></li>
+          </ul></dd></div>
+          <div><dt>IoT &amp; Tools</dt><dd><ul class="technologies" role="list">
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-esp"/></svg><span>ESP32</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-arduino"/></svg><span>Arduino IDE</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-things"/></svg><span>ThingsBoard</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-git"/></svg><span>Git</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-github"/></svg><span>GitHub</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-linux"/></svg><span>Linux</span></li>
+            <li><svg class="tech-icon" aria-hidden="true"><use href="#tech-docker"/></svg><span>Docker (basic)</span></li>
+          </ul></dd></div>
+          <div><dt>AI Coding Tools</dt><dd><ul class="technologies ai-tools" role="list">
+            <li><img src="./assets/claude-code.webp" width="256" height="207" alt="" loading="lazy" decoding="async"><span>Claude Code</span></li>
+            <li><img src="./assets/codex.webp" width="256" height="252" alt="" loading="lazy" decoding="async"><span>Codex</span></li>
+          </ul></dd></div>
+        </dl>
+      </div>
+    </section>
+    <section class="shell section split" id="experience" aria-labelledby="experience-title">
+      <div>
+        <p class="eyebrow index">03 / EXPERIENCE</p>
+        <h2 id="experience-title">Experience<br>&amp; training<span>.</span></h2>
+        <img class="section-art experience-art" src="./assets/experience.webp" width="850" height="638" alt="" loading="lazy" decoding="async">
+      </div>
+      <ol class="timeline">
+        <li><p class="eyebrow"><time datetime="2026-02">FEB 2026</time></p><h3>TETR Emerging Founder’s Challenge</h3><p>Presented BreathSafe as part of a three-person team and reached an advanced stage of the competition.</p></li>
+        <li><p class="eyebrow"><time datetime="2025-07">JUL</time> – <time datetime="2025-09">SEP 2025</time></p><h3>AI Training, Data Science Track</h3><p>On-site program with SHAI for AI, using Python.</p></li>
+        <li><p class="eyebrow"><time datetime="2023-09">SEP</time> – <time datetime="2023-11">NOV 2023</time></p><h3>C++ Programming Trainee</h3><p>A 32-hour course with Beprogrammer.org.</p></li>
+      </ol>
+    </section>
+    <section class="contact-band" id="contact" aria-labelledby="contact-title">
+      <div class="shell section contact"><div><p class="eyebrow availability">04 / CONTACT</p><h2 id="contact-title">Let’s build<br>something<span>.</span></h2><p>Open to Junior Full Stack and Frontend Developer opportunities.</p>
+        <div class="actions"><a class="button" href="https://www.linkedin.com/in/mohammad-osama-b0148526a/">LinkedIn <span aria-hidden="true">↗</span></a><a class="button outline" href="https://github.com/mahmadOsama">GitHub <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <img class="contact-art" src="./assets/contact-developer.webp" width="960" height="640" alt="" loading="lazy" decoding="async">
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer"><p>© 2026 Mohammad Osama Ibrahim · Amman, Jordan</p><a class="text-link" href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    function updateTheme(theme) {
+      setTheme(theme);
+      themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+      themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    }
+
+    updateTheme(document.documentElement.dataset.theme);
+    themeToggle.hidden = false;
+    themeToggle.addEventListener('click', () => {
+      savedTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      updateTheme(savedTheme);
+      try { localStorage.setItem('portfolio-theme', savedTheme); } catch {}
+    });
+    systemTheme.addEventListener('change', (event) => {
+      if (savedTheme !== 'light' && savedTheme !== 'dark') updateTheme(event.matches ? 'dark' : 'light');
+    });
+
+    const title = document.querySelector('.role-title');
+    const characters = Array.from(title.textContent);
+    const typed = document.createElement('span');
+    typed.className = 'role-typed';
+    typed.setAttribute('aria-hidden', 'true');
+    title.after(typed);
+    title.classList.add('role-readable');
+
+    let index = 0;
+
+    function typeNext() {
+      index += 1;
+      typed.textContent = characters.slice(0, index).join('');
+      if (index < characters.length) {
+        setTimeout(typeNext, 95);
+      } else {
+        setTimeout(eraseNext, 2200);
+      }
+    }
+
+    function eraseNext() {
+      index -= 1;
+      typed.textContent = characters.slice(0, index).join('');
+      if (index > 0) {
+        setTimeout(eraseNext, 45);
+      } else {
+        setTimeout(typeNext, 500);
+      }
+    }
+
+    setTimeout(typeNext, 350);
+  </script>
+</body>
+</html>
